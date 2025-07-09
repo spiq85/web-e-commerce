@@ -13,12 +13,20 @@ class Product extends Model
     protected $primaryKey = 'id_products';
 
     protected $fillable = [
+        'id_categories',
         'product_name',
         'price',
         'brand',
         'stock',
         'description',
         'image'
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'price' => 'decimal:2',
+        'stock' => 'integer'
     ];
 
     public function category()

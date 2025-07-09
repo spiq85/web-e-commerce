@@ -1,4 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
@@ -15,12 +14,12 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-            colors: {
-                'rubylux-dark': '#1a1a1a',
-                'rubylux-ruby': '#e0115f',
-                'rubylux-ruby-dark': '#a00a40',
-                'rubylux-gradient-start': '#e0115f',
-                'rubylux-gradient-end': '#a00a40',
+            colors: { 
+                'rubylux-dark': '#0a0a0a',
+                'rubylux-ruby': '#FF0066',
+                'rubylux-ruby-dark': '#AA0044',
+                'rubylux-gradient-start': '#FF0066',
+                'rubylux-gradient-end': '#AA0044',
                 'rubylux-text-light': '#f0f0f0',
                 'rubylux-text-dark': '#333333',
             },

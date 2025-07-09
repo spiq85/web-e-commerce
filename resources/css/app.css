@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Warna Palet RubyLux */
+:root {
+    --rubylux-dark: #0a0a0a;
+    --rubylux-ruby: #FF0066;
+    --rubylux-ruby-dark: #AA0044;
+    --rubylux-gradient-start: #FF0066;
+    --rubylux-gradient-end: #AA0044;
+    --rubylux-text-light: #f0f0f0; /* Teks terang */
+    --rubylux-text-dark: #333333; /* Teks gelap */
+}
+
+/* Override warna Tailwind CSS default agar sesuai tema RubyLux */
+.bg-gray-100 { background-color: var(--rubylux-dark); }
+.bg-white { background-color: #2b2b2b; } /* Warna card/box */
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+.border-gray-200 { border-color: #444444; }
+
+/* Override Teks Warna Abu-abu menjadi Teks Terang RubyLux */
+.text-gray-800,
+.text-gray-900,
+.text-gray-700, /* Ini sering dipakai untuk link navigasi */
+.text-gray-600, /* Ini juga sering */
+.text-gray-500, /* Dan ini */
+.text-white /* Teks putih di tombol default */ {
+    color: var(--rubylux-text-light) !important;
+}
+
+/* Override input forms */
+.form-input, .form-textarea, .form-select, .form-multiselect {
+    background-color: #333333 !important;
+    border-color: #555555 !important;
+    color: var(--rubylux-text-light) !important;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus, .form-multiselect:focus {
+    border-color: var(--rubylux-ruby) !important;
+    box-shadow: 0 0 0 3px rgba(255, 0, 102, 0.5) !important;
+}
+
+/* Tombol default Breeze */
+/* Pastikan warna button default sesuai RubyLux */
+.inline-flex.items-center.px-4.py-2.bg-gray-800.border.border-transparent.rounded-md.font-semibold.text-xs.uppercase.tracking-widest.hover\:bg-gray-700.focus\:bg-gray-700.active\:bg-gray-900.focus\:outline-none.focus\:ring-2.focus\:ring-indigo-500.focus\:ring-offset-2.transition.ease-in-out.duration-150 {
+    background-color: var(--rubylux-ruby);
+    border-color: var(--rubylux-ruby);
+    color: var(--rubylux-text-light) !important; /* Tambah !important untuk memastikan override */
+}
+.inline-flex.items-center.px-4.py-2.bg-gray-800.border.border-transparent.rounded-md.font-semibold.text-xs.uppercase.tracking-widest.hover\:bg-gray-700.focus\:bg-gray-700.active\:bg-gray-900.focus\:outline-none.focus\:ring-2.focus\:ring-indigo-500.focus\:ring-offset-2.transition.ease-in-out.duration-150:hover {
+    background-color: var(--rubylux-ruby-dark);
+}
+
+/* Kelas kustom RubyLux (tetap ada) */
+.bg-rubylux-dark { background-color: var(--rubylux-dark); }
+.text-rubylux-ruby { color: var(--rubylux-ruby); }
+.bg-rubylux-ruby { background-color: var(--rubylux-ruby); }
+.hover\:bg-rubylux-ruby-dark:hover { background-color: var(--rubylux-ruby-dark); }
+.border-rubylux-ruby { border-color: var(--rubylux-ruby); }
+.gradient-rubylux {
+    background: linear-gradient(to right, var(--rubylux-gradient-start), var(--rubylux-gradient-end));
+}
+.text-rubylux-light { color: var(--rubylux-text-light); }
+.text-rubylux-dark { color: var(--rubylux-text-dark); }

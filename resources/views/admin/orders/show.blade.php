@@ -61,7 +61,7 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-rubylux-dark divide-y divide-rubylux-ruby-dark">
-                                @forelse ($order->orderItems as $item)
+                                @forelse ($order->items as $item)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $item->product->product_name ?? 'Produk Dihapus' }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ number_format($item->price_at_purchase, 2, ',', '.') }}</td>

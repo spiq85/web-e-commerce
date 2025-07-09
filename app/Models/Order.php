@@ -14,11 +14,20 @@ class Order extends Model
 
     protected $fillable = [
         'id_users',
+        'order_number',
         'total_amount',
         'order_date',
         'status',
         'shipping_address',
         'payment_method',
+        'payment_status',
+    ];
+
+    protected $casts = [
+        'order_date' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'total_amount' => 'decimal:2',
     ];
 
     public function user() {

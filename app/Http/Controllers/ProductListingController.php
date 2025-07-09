@@ -36,7 +36,7 @@ class ProductListingController extends Controller
         return view('products.index', compact('products', 'mainCategories', 'activeCategory'));
     }
 
-    private function getCategoriesAndChildrenIds(Category $category): array
+    private function getCategoryAndChildrenIds(Category $category): array
     {
         $ids = [$category->id_categories];
 
@@ -50,8 +50,8 @@ class ProductListingController extends Controller
     public function show($id): View
     {
         try {
-            $products = Product::with('category')->findOrFail($id);
-            return view('products.show', compact('products'));
+            $product = Product::with('category')->findOrFail($id);
+            return view('products.show', compact('product'));
         } catch (ModelNotFoundException $e)
         {
             return redirect()->route('products.index')->with('error', 'Product Tidak Ditemukan.');
